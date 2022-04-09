@@ -13,7 +13,13 @@ const Header = () => {
                 <Link to='/'>Home</Link>
                 <Link to='/products'>Products</Link>
                 <Link to='/orders'>Orders</Link>
-                <Link to='/register'>Register</Link>
+                {
+                    user?.uid
+                        ?
+                        <Link to='vip'>Vip</Link>
+                        :
+                        <Link to='/register'>Register</Link>
+                }
                 <span style={{ marginRight: '10px' }}>{user?.displayName && user.displayName}</span>
                 {
                     user?.uid
